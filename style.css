@@ -237,6 +237,31 @@ a:hover {
     box-shadow: 0 12px 24px rgba(88, 166, 255, 0.4);
 }
 
+/* Submit Button */
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #58a6ff;
+    color: #0d1117;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background: #79c0ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(88, 166, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
 .hero-photo {
     display: flex;
     justify-content: center;
@@ -424,16 +449,20 @@ section h2::after {
 
 .project-card {
     padding: 32px;
-    border-radius: 0;
+    border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    background: rgba(33, 38, 45, 0.8);
+    border: 1px solid rgba(177, 186, 196, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
-    border-color: #ffffff;
+    border-color: #58a6ff;
 }
 
 .project-tag {
@@ -492,6 +521,66 @@ footer a {
     color: #79c0ff;
 }
 
+/* IMPROVED CONTACT SECTION */
+.contact-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-intro h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    color: #f0f2f5;
+}
+
+.contact-intro p {
+    color: #c9d1d9;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-form-wrapper {
+    background: rgba(33, 38, 45, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(177, 186, 196, 0.2);
+}
+
+.contact-form-wrapper h3 {
+    color: #f0f2f5;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.contact-info-wrapper {
+    background: rgba(33, 38, 45, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(177, 186, 196, 0.2);
+}
+
+.contact-info-wrapper h3 {
+    color: #f0f2f5;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
 /* Contact Form */
 .contact-content {
     max-width: 600px;
@@ -532,6 +621,103 @@ textarea {
     min-height: 150px;
 }
 
+/* INFO ITEMS - Contact */
+.info-item {
+    margin-bottom: 2rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item h4 {
+    color: #58a6ff;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-item p {
+    margin: 0;
+    color: #c9d1d9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(88, 166, 255, 0.2);
+    color: #58a6ff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: rgba(88, 166, 255, 0.4);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* PROJECT TECHNOLOGIES */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: rgba(88, 166, 255, 0.15);
+    color: #79c0ff;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+/* PROJECT LINKS */
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.link-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: rgba(88, 166, 255, 0.2);
+    color: #58a6ff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+.link-btn:hover {
+    background: rgba(88, 166, 255, 0.35);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: #79c0ff;
+}
+
+.link-btn.demo {
+    background: rgba(88, 166, 255, 0.05);
+}
+
+.link-btn.demo:hover {
+    background: rgba(88, 166, 255, 0.2);
+}
+
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
@@ -541,6 +727,11 @@ textarea {
 
     .hero-photo {
         margin-top: 24px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .nav-menu {

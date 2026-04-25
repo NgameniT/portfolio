@@ -27,27 +27,60 @@
 
     <main>
         <section class="contact page">
-            <h2>Contact</h2>
-            <div class="contact-content">
-                <p style="text-align: center; margin-bottom: 2rem;">
-                    Intéressé par une collaboration ? N'hésitez pas à me contacter !
-                </p>
+            <div class="contact-wrapper">
+                <div class="contact-intro">
+                    <h2>Me contacter</h2>
+                    <p>Intéressé par une collaboration ou vous avez une question ? Je serais ravi d'en discuter avec vous !</p>
+                </div>
                 
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="contact-container">
+                    <!-- FORMULAIRE -->
+                    <div class="contact-form-wrapper">
+                        <h3>Envoyez-moi un message</h3>
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="_replyto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Envoyer</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="_replyto" required>
+                    
+                    <!-- INFOS DE CONTACT -->
+                    <div class="contact-info-wrapper">
+                        <h3>Autres moyens</h3>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <h4>Email</h4>
+                                <a href="mailto:diane@example.com">diane@example.com</a>
+                            </div>
+                            <div class="info-item">
+                                <h4>Téléphone</h4>
+                                <p>+33 (0) 6 XX XX XX XX</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Réseaux sociaux</h4>
+                                <div class="social-links">
+                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <h4>Localisation</h4>
+                                <p>France</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Envoyer</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
