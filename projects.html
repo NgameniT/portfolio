@@ -19,6 +19,7 @@
                 <li><a href="about.html" class="nav-link">À propos</a></li>
                 <li><a href="education.html" class="nav-link">Parcours</a></li>
                 <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="projects.html" class="nav-link">Projets</a></li>
                 <li><a href="contact.html" class="nav-link nav-link-contact">Contact</a></li>
             </ul>
@@ -26,44 +27,111 @@
     </nav>
 
     <main>
-        <section class="school-projects page">
-            <h2>Projets réalisés à l'école</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-tag">Full Stack</div>
-                    <h3>Plateforme de transfert monétaire</h3>
-                    <p>Développement d'une plateforme de transfert d'argent en ligne avec interface web responsive et application mobile native.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">MongoDB</span>
-                        <span class="tech-badge">React Native</span>
+        <section class="academic-experience page">
+            <h2>Projets Académiques</h2>
+
+            <div class="experience-item">
+                <h3>Projet Full Stack - Plateforme de Transfert Monétaire</h3>
+                <p>Développement d'une plateforme de transfert d'argent en ligne avec interface web responsive et application mobile native. Ce projet démontre les compétences en développement full-stack, de la conception API à l'interface utilisateur.</p>
+                <div class="project-tech">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">React Native</span>
+                </div>
+
+                <div class="project-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'screenshots1')">Captures d'écran</button>
+                    <button class="tab-btn" onclick="openTab(event, 'visit1')">Visiter le site</button>
+                </div>
+
+                <div id="screenshots1" class="tab-content active">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="images/screenshot1-1.jpg" alt="Capture 1" class="carousel-image">
+                            <img src="images/screenshot1-2.jpg" alt="Capture 2" class="carousel-image">
+                            <img src="images/screenshot1-3.jpg" alt="Capture 3" class="carousel-image">
+                        </div>
+                        <button class="carousel-btn prev" onclick="prevImage('screenshots1')">&#10094;</button>
+                        <button class="carousel-btn next" onclick="nextImage('screenshots1')">&#10095;</button>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/NgameniT/sysmonetaire.git" target="_blank" rel="noopener noreferrer" class="link-btn">Code</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn demo">Démo</a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-tag">Portofolio</div>
-                    <h3>Système de gestion de bibliothèque - BiblioConnect</h3>
-                    <p>Conception et développement d'une plateforme de gestion de prêt de livres pour une bibliothèque avec API REST complète.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express</span>
-                        <span class="tech-badge">PostgreSQL</span>
-                        <span class="tech-badge">REST API</span>
-                        <span class="tech-badge">JWT Auth</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://ngamenit.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="link-btn">Code</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn demo">Démo</a>
-                    </div>
-                </article>
+                </div>
+
+                <div id="visit1" class="tab-content">
+                    <p>Le site n'est pas hébergé publiquement. Vous pouvez consulter le code source :</p>
+                    <a href="https://github.com/NgameniT/sysmonetaire.git" target="_blank" class="link-btn">Voir le code</a>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3>Projet Portfolio - Système de Gestion de Bibliothèque</h3>
+                <p>Conception et développement d'une plateforme de gestion de prêt de livres pour une bibliothèque avec API REST complète. Mise en œuvre d'une architecture sécurisée avec authentification JWT.</p>
+                <div class="project-tech">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">REST API</span>
+                    <span class="tech-badge">JWT Auth</span>
+                </div>
+
+                <div class="project-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'screenshots2')">Captures d'écran</button>
+                    <button class="tab-btn" onclick="openTab(event, 'visit2')">Visiter le site</button>
+                </div>
+
+    
+
+                <div id="visit2" class="tab-content">
+                    <a href="https://ngamenitonguediane.netlify.app/" target="_blank" class="link-btn demo">Visiter le site</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bring-to-table page">
+            <h2>Ce que j'apporte à la table</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Livraison dans les délais</h3>
+                    <p>Les délais sont des engagements. Je planifie soigneusement, communique tôt sur les obstacles, et livre ce qui a été convenu.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Approche centrée sur la sécurité</h3>
+                    <p>La sécurité est intégrée dès le départ, des flux de clés cryptées aux APIs durcies et aux choix d'implémentation sûrs pour la production.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Pensée Full-Stack</h3>
+                    <p>Je comprends comment les couches backend, mobile et cloud se connectent, ce qui réduit les écarts et accélère la résolution des problèmes.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Communication claire</h3>
+                    <p>Vous recevez des mises à jour régulières, des estimations honnêtes, et des questions réfléchies quand quelque chose doit être clarifié.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Rapide à être productive</h3>
+                    <p>Je m'adapte rapidement aux nouveaux domaines et codebases, aidant les projets à avancer sans longs délais d'intégration.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Sortie axée sur l'entreprise</h3>
+                    <p>Je construis pour de vrais utilisateurs et des résultats commerciaux, pas seulement pour l'achèvement technique.</p>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Diane Ngameni Tongue. Construit avec HTML & CSS.</p>
+            <nav class="footer-nav">
+                <a href="about.html">À propos</a>
+                <a href="education.html">Parcours</a>
+                <a href="technologies.html">Technologies</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projets</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -19,6 +19,7 @@
                 <li><a href="about.html" class="nav-link">À propos</a></li>
                 <li><a href="education.html" class="nav-link">Parcours</a></li>
                 <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="projects.html" class="nav-link">Projets</a></li>
                 <li><a href="contact.html" class="nav-link nav-link-contact">Contact</a></li>
             </ul>
@@ -29,61 +30,61 @@
         <section class="contact page">
             <div class="contact-wrapper">
                 <div class="contact-intro">
-                    <h2>Me contacter</h2>
-                    <p>Intéressé par une collaboration ou vous avez une question ? Je serais ravi d'en discuter avec vous !</p>
+                    <h2>Travaillons ensemble</h2>
+                    <p>Vous avez un projet en tête ? J'aimerais en entendre parler. Contactez-moi et créons quelque chose de génial.</p>
+                    <div class="contact-info">
+                        <p><strong>Email :</strong> diane@example.com</p>
+                        <p><strong>Téléphone :</strong> +33 (0) 6 XX XX XX XX</p>
+                        <p><strong>Localisation :</strong> France</p>
+                        <p><strong>GitHub :</strong> <a href="https://github.com" target="_blank">github.com/diane</a></p>
+                    </div>
+                    <p>Je réponds généralement dans les 24 heures.</p>
                 </div>
                 
-                <div class="contact-container">
-                    <!-- FORMULAIRE -->
-                    <div class="contact-form-wrapper">
-                        <h3>Envoyez-moi un message</h3>
-                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                            <div class="form-group">
-                                <label for="name">Nom</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="_replyto" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn">Envoyer</button>
-                        </form>
-                    </div>
-                    
-                    <!-- INFOS DE CONTACT -->
-                    <div class="contact-info-wrapper">
-                        <h3>Autres moyens</h3>
-                        <div class="contact-info">
-                            <div class="info-item">
-                                <h4>Email</h4>
-                                <a href="mailto:diane@example.com">diane@example.com</a>
-                            </div>
-                            <div class="info-item">
-                                <h4>Téléphone</h4>
-                                <p>+33 (0) 6 XX XX XX XX</p>
-                            </div>
-                            <div class="info-item">
-                                <h4>Réseaux sociaux</h4>
-                                <div class="social-links">
-                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <h4>Localisation</h4>
-                                <p>France</p>
-                            </div>
+                <div class="contact-form-wrapper">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" id="email" name="_replyto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project_type">Type de projet</label>
+                            <select id="project_type" name="project_type">
+                                <option value="">Sélectionnez un type</option>
+                                <option value="web">Développement Web</option>
+                                <option value="mobile">Application Mobile</option>
+                                <option value="data">Data & IA</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Parlez-moi de votre projet</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Diane Ngameni Tongue. Construit avec HTML & CSS.</p>
+            <nav class="footer-nav">
+                <a href="about.html">À propos</a>
+                <a href="education.html">Parcours</a>
+                <a href="technologies.html">Technologies</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projets</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
