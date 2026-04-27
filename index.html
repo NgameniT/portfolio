@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Développeur Web</title>
+    <title>Portfolio - Diane Ngameni Tongue</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="top">
+    <div class="bg-animation">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Diane</div>
@@ -16,57 +24,325 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="about.html" class="nav-link">À propos</a></li>
-                <li><a href="education.html" class="nav-link">Parcours</a></li>
-                <li><a href="technologies.html" class="nav-link">Technologies</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="projects.html" class="nav-link">Projets</a></li>
-                <li><a href="contact.html" class="nav-link nav-link-contact">Contact</a></li>
+                <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#education" class="nav-link">Parcours</a></li>
+                <li><a href="#technologies" class="nav-link">Technologies</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link nav-link-contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero page">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="eyebrow">DATA & IA / ARCHITECTE WEB</p>
-                <h1>Diane NGAMENI TONGUE</h1>
-                <p>Créatrice d'expériences digitales, à la croisée du développement web, de la data et de l'intelligence artificielle.</p>
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Années d'expérience</span>
+    <main>
+        <section id="hero" class="hero page">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">DATA & IA / ARCHITECTE WEB</p>
+                    <h1>Diane NGAMENI TONGUE</h1>
+                    <p>Créatrice d'expériences digitales, à la croisée du développement web, de la data et de l'intelligence artificielle.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Années d'expérience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Projets livrés</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Satisfaction client</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Projets livrés</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfaction client</span>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="button primary">Contactez-moi</a>
+                        <a href="#projects" class="button secondary">Voir mes projets</a>
                     </div>
                 </div>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="button primary">Contactez-moi</a>
-                    <a href="projects.html" class="button secondary">Voir mes projets</a>
+                <div class="hero-photo">
+                    <img src="images/photo.jpg" alt="Diane Ngameni Tongue">
                 </div>
             </div>
-            <div class="hero-photo">
-                <img src="images/photo.jpg" alt="Photo développeur web">
+        </section>
+
+        <section id="about" class="about page">
+            <h2>À propos de moi</h2>
+            <div class="section-content">
+                <p>Admise en Mastère Data & IA à HETIC pour la rentrée 2026-2027, je propose mes compétences dans le cadre d’une alternance à partir de septembre 2026.</p>
+                <p>Issue d’un Mastère 1 en Stratégie et Transformation Digitale, spécialité Architecture Web, complété par une formation en IA & Big Data, j’ai développé une double compétence alliant développement web, conception d’applications et exploitation des données. Mes projets m’ont permis d’acquérir une vision globale des enjeux digitaux, à la croisée de la technique, de l’UX/UI, de la stratégie, de l’expérience utilisateur et de la data.</p>
+                <p>Aujourd’hui, je mets ces compétences au service de projets innovants en data et intelligence artificielle, avec l’ambition de concevoir des solutions performantes, intelligentes et centrées sur les besoins utilisateurs.</p>
             </div>
-        </div>
-    </header>
+        </section>
+
+        <section id="education" class="education page">
+            <h2>Parcours universitaire</h2>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <h3>Master DATA & IA</h3>
+                    <span class="timeline-date">En cours (2026 - 2027)</span>
+                    <ul class="custom-list">
+                        <li>Spécialisation en Data Science et Intelligence Artificielle</li>
+                        <li>Projets en autonomie et en équipe</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Master ARCHITECTURE WEB</h3>
+                    <span class="timeline-date">2025 - 2026</span>
+                    <ul class="custom-list">
+                        <li>Spécialisation en architecture web scalable</li>
+                        <li>Pédagogie par projets</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Master en IA & BIG DATA</h3>
+                    <span class="timeline-date">2024 - 2025</span>
+                    <ul class="custom-list">
+                        <li>Apprentissage des algorithmes de machine learning</li>
+                        <li>Gestion et analyse de grands volumes de données</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Licence en architecture logicielle</h3>
+                    <span class="timeline-date">2021 - 2024</span>
+                    <ul class="custom-list">
+                        <li>Formation approfondie en conception et développement de systèmes logiciels</li>
+                        <li>Apprentissage des principes SOLID et patterns de conception</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="technologies" class="technologies page">
+            <h2>Technologies maîtrisées</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Front-end</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Vue.js</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>Back-end</h3>
+                    <ul>
+                        <li>Node.js & Express</li>
+                        <li>PHP & Laravel</li>
+                        <li>C# / .NET</li>
+                        <li>Python (Django/FastAPI)</li>
+                        <li>SQL (PostgreSQL) & NoSQL (MongoDB)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>Data & IA / Outils</h3>
+                    <ul>
+                        <li>Machine Learning (Scikit-learn)</li>
+                        <li>Analyse de données (Pandas, NumPy)</li>
+                        <li>Git & GitHub</li>
+                        <li>Figma & UI/UX Design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services page">
+            <h2>Mes Services</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Développement Web Full Stack</h3>
+                    <p>Création d'applications web complètes avec interfaces responsives et APIs robustes pour des expériences utilisateur optimales.</p>
+                    <div class="service-tech">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <h3>Applications Mobiles</h3>
+                    <p>Développement d'applications mobiles performantes avec React Native pour iOS et Android.</p>
+                    <div class="service-tech">
+                        <span class="tech-badge">React Native</span>
+                        <span class="tech-badge">Expo</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <h3>Data Science & IA</h3>
+                    <p>Intégration de solutions de data science et d'intelligence artificielle pour analyser et optimiser vos données métiers.</p>
+                    <div class="service-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Machine Learning</span>
+                        <span class="tech-badge">Data Analysis</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="academic-experience page">
+            <h2>Projets Académiques</h2>
+
+            <div class="projects-grid">
+                <div class="experience-item">
+                    <h3>Projet Full Stack - Plateforme de Transfert Monétaire</h3>
+                    <p>Développement d'une plateforme de transfert d'argent en ligne avec interface web responsive et application mobile native.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">React Native</span>
+                    </div>
+
+                    <div class="project-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'screenshots1')">Captures d'écran</button>
+                        <button class="tab-btn" onclick="openTab(event, 'visit1')">Code Source</button>
+                    </div>
+
+                    <div id="screenshots1" class="tab-content active">
+                        <div class="carousel">
+                            <div class="carousel-container">
+                                <img src="images/screenshot1-1.jpg" alt="Capture 1" class="carousel-image">
+                                <img src="images/screenshot1-2.jpg" alt="Capture 2" class="carousel-image">
+                                <img src="images/screenshot1-3.jpg" alt="Capture 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev" onclick="prevImage('screenshots1')">&#10094;</button>
+                            <button class="carousel-btn next" onclick="nextImage('screenshots1')">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <div id="visit1" class="tab-content">
+                        <div class="visit-content">
+                            <p>Le projet est disponible sur GitHub :</p>
+                            <a href="https://github.com/NgameniT/sysmonetaire.git" target="_blank" class="link-btn">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Système de Gestion de Bibliothèque</h3>
+                    <p>Conception et développement d'une plateforme de gestion de prêt de livres avec API REST complète et authentification JWT.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">JWT Auth</span>
+                    </div>
+
+                    <div class="project-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'visit2')">Démonstration</button>
+                    </div>
+
+                    <div id="visit2" class="tab-content active">
+                        <div class="visit-content">
+                            <p>Vous pouvez consulter la version déployée :</p>
+                            <a href="https://ngamenitonguediane.netlify.app/" target="_blank" class="link-btn">Visiter le site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="values" class="bring-to-table page">
+            <h2>Ce que j'apporte à la table</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Livraison dans les délais</h3>
+                    <p>Les délais sont des engagements. Je planifie soigneusement et communique tôt sur les obstacles.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Approche centrée sécurité</h3>
+                    <p>La sécurité est intégrée dès le départ, des flux de clés cryptées aux APIs durcies.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Pensée Full-Stack</h3>
+                    <p>Je comprends comment les couches backend, mobile et cloud se connectent, accélérant la résolution des problèmes.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Communication claire</h3>
+                    <p>Mises à jour régulières, estimations honnêtes et questions réfléchies pour garantir le succès.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Adaptabilité rapide</h3>
+                    <p>Je m'adapte rapidement aux nouveaux domaines et codebases, réduisant les délais d'intégration.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Orientation Résultats</h3>
+                    <p>Je construis pour de vrais utilisateurs et des résultats concrets, pas seulement pour la technique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact page">
+            <div class="contact-wrapper">
+                <div class="contact-left">
+                    <h2>Travaillons ensemble</h2>
+                    <p class="contact-desc">Vous avez un projet en tête ou une opportunité d'alternance ? J'aimerais en entendre parler. Contactez-moi et créons quelque chose de génial.</p>
+                    
+                    <div class="contact-info-list">
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <a href="mailto:dianengameni8@gmail.com" class="info-value">dianengameni8@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Localisation</span>
+                            <span class="info-value">France </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/diane-ngameni-tongue-189b70387/" target="_blank" class="info-value">https://www.linkedin.com/in/diane-ngameni-tongue-189b70387/</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">GitHub</span>
+                            <a href="https://github.com/NgameniT" target="_blank" class="info-value">https://github.com/NgameniT</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-right">
+                    <div class="contact-form-card">
+                        <form action="https://formspree.io/f/xqewvzzw" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse email</label>
+                                <input type="email" id="email" name="_replyto" placeholder="votre@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="project_type">Sujet</label>
+                                <select id="project_type" name="project_type">
+                                    <option value="">Sélectionnez un type</option>
+                                    <option value="alternance">Offre d'alternance</option>
+                                    <option value="freelance">Projet Freelance</option>
+                                    <option value="collab">Collaboration</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 Diane Ngameni Tongue. Construit avec HTML & CSS.</p>
+            <p>&copy; 2026 Diane Ngameni Tongue. Construit avec passion en HTML & CSS.</p>
             <nav class="footer-nav">
-                <a href="about.html">À propos</a>
-                <a href="education.html">Parcours</a>
-                <a href="technologies.html">Technologies</a>
-                <a href="services.html">Services</a>
-                <a href="projects.html">Projets</a>
-                <a href="contact.html">Contact</a>
+                <a href="#hero">Accueil</a>
+                <a href="#about">À propos</a>
+                <a href="#projects">Projets</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </footer>

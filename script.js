@@ -1,77 +1,85 @@
-// Initialisation accessibilité
-menuToggle.setAttribute('aria-expanded', 'false');
-navMenu.setAttribute('aria-hidden', 'true');
-
-// Menu hamburger toggle
+// DOM Elements
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.page');
 
-menuToggle.addEventListener('click', () => {
-    const isActive = menuToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    // Accessibilité
-    menuToggle.setAttribute('aria-expanded', isActive);
-    navMenu.setAttribute('aria-hidden', !isActive);
-});
+// Initialisation accessibilité
+if (menuToggle && navMenu) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('aria-hidden', 'true');
+
+    // Menu hamburger toggle
+    menuToggle.addEventListener('click', () => {
+        const isActive = menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        // Accessibilité
+        menuToggle.setAttribute('aria-expanded', isActive);
+        navMenu.setAttribute('aria-hidden', !isActive);
+    });
+}
 
 // Fermer le menu au clic sur un lien
-const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        // Fermer immédiatement le menu
+    link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
-        // Petit délai pour permettre au menu de se fermer avant la navigation
-        setTimeout(() => {
-            // La navigation se fait naturellement
-        }, 100);
     });
 });
 
 // Fermer le menu au clic en dehors
 document.addEventListener('click', (e) => {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar.contains(e.target)) {
+    if (menuToggle && navMenu && !menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
     }
 });
 
-// Animation au scroll
+// Animation au scroll (Intersection Observer)
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -10% 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
 
-// Observer toutes les pages
-document.querySelectorAll('.page').forEach(page => {
-    observer.observe(page);
+sections.forEach(section => {
+    observer.observe(section);
 });
 
 // Navigation active au scroll
-const sections = document.querySelectorAll('.page');
-const navItems = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.scrollY + 100;
+
+    sections.forEach(section => {
+        if (scrollPos >= section.offsetTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
 
 // Fonction pour les onglets
 function openTab(evt, tabName) {
-    const tabContent = document.querySelectorAll('.tab-content');
-    tabContent.forEach(content => {
-        content.classList.remove('active');
-    });
+    const parent = evt.currentTarget.closest('.experience-item');
+    const tabContents = parent.querySelectorAll('.tab-content');
+    const tabButtons = parent.querySelectorAll('.tab-btn');
 
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    tabButtons.forEach(button => {
-        button.classList.remove('active');
-    });
+    tabContents.forEach(content => content.classList.remove('active'));
+    tabButtons.forEach(button => button.classList.remove('active'));
 
     document.getElementById(tabName).classList.add('active');
     evt.currentTarget.classList.add('active');
@@ -81,14 +89,16 @@ function openTab(evt, tabName) {
 let currentIndices = {};
 
 function showImage(carouselId, index) {
-    const images = document.querySelectorAll(`#${carouselId} .carousel-image`);
+    const carousel = document.getElementById(carouselId);
+    const images = carousel.querySelectorAll('.carousel-image');
     images.forEach((img, i) => {
         img.classList.toggle('active', i === index);
     });
 }
 
 function nextImage(carouselId) {
-    const images = document.querySelectorAll(`#${carouselId} .carousel-image`);
+    const carousel = document.getElementById(carouselId);
+    const images = carousel.querySelectorAll('.carousel-image');
     currentIndices[carouselId] = (currentIndices[carouselId] || 0) + 1;
     if (currentIndices[carouselId] >= images.length) {
         currentIndices[carouselId] = 0;
@@ -97,7 +107,8 @@ function nextImage(carouselId) {
 }
 
 function prevImage(carouselId) {
-    const images = document.querySelectorAll(`#${carouselId} .carousel-image`);
+    const carousel = document.getElementById(carouselId);
+    const images = carousel.querySelectorAll('.carousel-image');
     currentIndices[carouselId] = (currentIndices[carouselId] || 0) - 1;
     if (currentIndices[carouselId] < 0) {
         currentIndices[carouselId] = images.length - 1;
@@ -105,11 +116,11 @@ function prevImage(carouselId) {
     showImage(carouselId, currentIndices[carouselId]);
 }
 
-// Initialiser les carrousels
+// Initialiser les carrousels et onglets au chargement
 document.addEventListener('DOMContentLoaded', () => {
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
-        const carouselId = carousel.parentElement.id;
+        const carouselId = carousel.closest('.tab-content').id;
         const images = carousel.querySelectorAll('.carousel-image');
         if (images.length > 0) {
             images[0].classList.add('active');
@@ -118,41 +129,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-window.addEventListener('scroll', () => {
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').slice(1) === current) {
-            item.classList.add('active');
-        }
-    });
-});
-
 // Smooth scroll pour les liens de navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
 });
 
 // Animation des cartes au hover
-document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+document.querySelectorAll('.experience-item, .service-card, .tech-card, .value-item').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px) scale(1.02)';
     });
